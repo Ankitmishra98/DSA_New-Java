@@ -1,10 +1,10 @@
 class Main {
-    public static void printing1ToN(int n){
+    public static void printingNTo1(int n){
         if(n<1) return;
-       printing1ToN(n-1);
         System.out.println(n);
+       printingNTo1(n-1);
     }
     public static void main(String[] args) {
-printing1ToN(5);
+printingNTo1(5);
     }
     }
