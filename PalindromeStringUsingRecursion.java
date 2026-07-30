@@ -1,23 +1,20 @@
 
 
 class Main {
-    public static String check(char[] arr, int i){
-        if(i>= arr.length/2){
-        //  System.out.println(new String(arr));
+    public static boolean check(String s , int i){
+        if(i>= s.length()/2) return true;
         
-            return new String(arr);
+        if(s.charAt(s.length()-i-1) != s.charAt(i)){
+            return false;
         }
-        char temp= arr[arr.length-i-1];
-        arr[arr.length-i-1]= arr[i];
-        arr[i]=temp;
-        return check(arr, i+1);
-        
+        return check(s, i+1);
     }
-    
     public static void main(String[] args) {
-       String s="madam";
-      String reversed=check( s.toCharArray(), 0);
-      System.out.print(reversed.equals(s) ? "Palindrome String":"Not a Palindrome String");
-    //   System.out.print(s==s);
+      System.out.println(check("madam", 0)); // true
+      System.out.println(check("abba", 0)); // true
+      System.out.println(check("racecar", 0)); // true
+      System.out.println(check("abcba", 0)); // true
+      System.out.println(check("sir", 0)); // false
+      System.out.println(check("hello", 0)); // false
     }
 }
