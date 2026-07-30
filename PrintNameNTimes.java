@@ -1,10 +1,10 @@
 class Main {
-    public static void printingNameNTimes(String n, int time){
-        if(time<1) return;
+    public static void printing1ToN(int n){
+        if(n<1) return;
+       printing1ToN(n-1);
         System.out.println(n);
-        printingNameNTimes(n,time-1);
     }
     public static void main(String[] args) {
-   printingNameNTimes("Ankit Mishra", 5);
+printing1ToN(5);
     }
     }
